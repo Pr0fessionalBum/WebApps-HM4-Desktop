@@ -1,0 +1,254 @@
+.todo-page {
+  width: 1440px;
+  min-height: 1024px;
+  margin: 0 auto;
+  background: var(--background);
+}
+
+.todo-header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d8d8d8;
+  background: var(--cream);
+}
+
+.logo-text {
+  font-size: 58px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.logo-text.muted {
+  color: #727272;
+}
+
+.logo-text.orange {
+  color: var(--orange);
+}
+
+.logo-check {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  margin-left: 2px;
+  border: 6px solid var(--orange);
+  border-radius: 50%;
+}
+
+.logo-check::after {
+  content: "";
+  width: 13px;
+  height: 23px;
+  border-right: 6px solid var(--orange);
+  border-bottom: 6px solid var(--orange);
+  transform: rotate(43deg) translate(-1px, -2px);
+}
+
+.category-tabs {
+  height: 68px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--tab-bg);
+}
+
+.tab {
+  position: relative;
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.tab.active {
+  color: #000000;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--orange);
+}
+
+.task-composer {
+  width: 954px;
+  height: 87px;
+  display: grid;
+  grid-template-columns: 1fr 141px;
+  margin: 91px auto 38px;
+  overflow: hidden;
+  border-radius: 44px;
+  background: var(--cream);
+}
+
+.task-composer input {
+  min-width: 0;
+  padding: 0 34px;
+  border: 0;
+  color: var(--ink);
+  background: transparent;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.task-composer input::placeholder {
+  color: #9a9a9c;
+  opacity: 1;
+}
+
+.task-composer input:focus {
+  outline: 0;
+}
+
+.task-composer:focus-within {
+  box-shadow: 0 0 0 4px rgba(117, 184, 206, 0.28);
+}
+
+.task-composer button {
+  border: 0;
+  color: #ffffff;
+  background: var(--blue);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.task-panel {
+  width: 954px;
+  min-height: 570px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 19px 78px 26px 34px;
+  border-radius: 38px;
+  background: var(--cream);
+}
+
+.task-list {
+  display: grid;
+}
+
+.task-row {
+  min-height: 79px;
+  display: grid;
+  grid-template-columns: 61px 1fr 61px;
+  align-items: start;
+  column-gap: 20px;
+  padding-top: 17px;
+}
+
+.task-row p {
+  min-height: 59px;
+  margin: 0;
+  padding: 0 17px 16px 0;
+  border-bottom: 1px solid var(--line-blue);
+  color: var(--ink);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.task-row.completed p {
+  color: var(--completed);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.complete-button,
+.delete-button,
+.clear-button {
+  border: 0;
+  background: transparent;
+}
+
+.complete-button {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+  padding: 0;
+  border: 4px solid #737373;
+  border-radius: 50%;
+}
+
+.task-row.completed .complete-button {
+  border-color: var(--orange);
+}
+
+.check-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 0 0 1px 4px;
+  fill: none;
+  stroke: var(--orange);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.1;
+}
+
+.delete-button {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin: 4px 0 0 auto;
+  padding: 0;
+}
+
+.trash-icon {
+  width: 31px;
+  height: 31px;
+  display: block;
+  fill: none;
+  stroke: var(--delete);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.8;
+}
+
+.clear-button {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  gap: 12px;
+  margin-top: auto;
+  padding: 0 22px 0 0;
+  color: var(--orange);
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.clear-icon {
+  width: 33px;
+  height: 33px;
+  display: block;
+  fill: none;
+  stroke: var(--orange);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
