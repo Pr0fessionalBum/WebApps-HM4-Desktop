@@ -6,11 +6,11 @@
 - Language: TSX
 - Styling: vanilla CSS
 
-The app lives in `todo-desktop`.
+cd into `todo-desktop`.
 
 ## Local Setup
 
-From this repository:
+From this folder:
 
 ```bash
 cd todo-desktop
@@ -21,18 +21,6 @@ Create `todo-desktop/.env` from `.env.example` and replace `YOUR_PASSWORD` with 
 
 ```env
 DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/todo_desktop?schema=public"
-```
-
-On this Windows machine, PostgreSQL is installed at:
-
-```powershell
-C:\Program Files\PostgreSQL\18\bin\psql.exe
-```
-
-Create the database if it does not exist:
-
-```powershell
-& "C:\Program Files\PostgreSQL\18\bin\psql.exe" -U postgres -h localhost -c "CREATE DATABASE todo_desktop;"
 ```
 
 Then run the Prisma migration and start the app:
